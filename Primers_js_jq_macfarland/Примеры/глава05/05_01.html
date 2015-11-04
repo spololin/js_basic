@@ -4,7 +4,26 @@
 <meta charset="UTF-8">
 <title>Введение в события</title>
 <link href="../_css/site.css" rel="stylesheet">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('html').dblclick(function(){
+                alert('ой!');
+            });
+            $('a').mouseover(function(){
+                var mess='<p>Вы навели указатель на ссылку</p>';
+                $('.main').append(mess);
+            });
+            $('#button').click(function(){
+               $(this).val('Прекрати это!');
+            });
+            $('#textfield').focus(function(){
+                $(this).css('background', 'red');
+                var mes='<p>Поле не заполнено!</p>';
+                   $('#textfield').append(mes);
+            });
+        });
+    </script>
 </head>
 <body id="events">
 <div class="wrapper">
