@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>FAQ на одной странице</title>
 <link href="../_css/site.css" rel="stylesheet">
-<script src="../_js/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <style type="text/css">
 h2 {
 	background: url(../_images/open.png) no-repeat 0 11px;
@@ -20,7 +20,17 @@ h2.close {
 </style>
 <script>
 $(document).ready(function() {
-
+    $('.answer').hide();
+    $('h2').click(function(){
+        var $answer=$(this).next('.answer');
+        if($answer.is(':hidden')){
+            $answer.slideDown();
+            $(this).addClass('close');
+        } else{
+            $answer.fadeOut();
+            $(this).removeClass('close');
+        };
+    })
 }); // end ready
 </script>
 </head>
