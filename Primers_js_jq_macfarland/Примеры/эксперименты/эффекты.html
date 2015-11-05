@@ -91,10 +91,10 @@ $(document).ready(function() {
 		 var action = $this.attr('title');
 		 switch (action) {
 			case 'hide' :
-			   target.hide();
+			   target.hide(1000);
 				 break;
 		  	case 'show' :
-				target.show();
+				target.show(1000);
 				break;
 			case 'toggle' :
 				target.toggle();
