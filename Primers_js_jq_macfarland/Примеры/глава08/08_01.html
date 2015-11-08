@@ -7,7 +7,22 @@
 <script src="../_js/jquery.min.js"></script>
 <script>
 $(document).ready(function() {
-
+	$(':text:first').focus();
+	$('#paypal').click(function () {
+		$('#creditCard input').prop('disabled', true);
+		$('#creditCard label').css('color', '#bbb');
+	});
+	$('#visa, #mastercard').click(function () {
+		$('#creditCard input').prop('disabled', false);
+		$('#creditCard label').css('color', '');
+	});
+	$('#hideShip').click(function () {
+		if($(this).prop('checked')){
+			$('#shipping').slideUp(300);
+		} else {
+			$('#shipping').slideDown(300);
+		}
+	});
 }); // end ready
 </script>
 </head>
@@ -24,7 +39,7 @@ $(document).ready(function() {
 					<legend>Информация об оплате</legend>
 					<div>
 						<label for="name" class="label">Имя</label>
-						<input name="name" type="text" id="name" size="36">
+						<input name="name" type="text" id="name" size="36" class="required">
 					</div>
 					<div>
 						<label for="address" class="label">Адрес</label>

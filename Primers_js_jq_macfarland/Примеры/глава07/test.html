@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тест</title>
+    <style>
+        body {
+            padding: 40px;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#but1').click(function () {
+                if($('#ch1').prop('disabled')){
+                    $('#ch1').prop('disabled', false);
+                } else{
+                    $('#ch1').prop('disabled', true);
+                };
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="checkbox" id="ch1">
+    <input type="checkbox" id="ch2">
+    <input type="checkbox" id="ch3">
+    <input type="checkbox" id="ch4">
+    <button id="but1">Click</button>
+</body>
+</html>

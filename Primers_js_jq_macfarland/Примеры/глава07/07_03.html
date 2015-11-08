@@ -4,11 +4,21 @@
 <meta charset="UTF-8">
 <title>Отзывчивое меню навигации</title>
 <link href="../_css/site.css" rel="stylesheet">
+<link href="smartmenus/sm-core-css.css" rel="stylesheet">
+<link href="smartmenus/sm-mysimple.css" rel="stylesheet">
 
 <script src="../_js/jquery.min.js"></script>
+<script src="smartmenus/jquery.smartmenus.min.js"></script>
 <script>
 $(document).ready(function() {
-
+    $('.sm').smartmenus({
+        showFunction: function($ul, complete) {
+            $ul.slideDown(250, complete);
+        },
+        hideFunction: function($ul, complete) {
+            $ul.slideUp(250, complete);
+        }
+    });
 }); // end ready
 </script>
 </head>
@@ -20,7 +30,7 @@ $(document).ready(function() {
   <div class="content">
     <div class="main">
       <h1>Меню навигации</h1>
-      <ul>
+      <ul class="sm sm-simple">
         <li><a href="#">Домой</a></li>
         <li><a href="#">О нас</a>
           <ul>
