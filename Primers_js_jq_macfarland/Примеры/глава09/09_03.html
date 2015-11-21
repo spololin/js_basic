@@ -9,7 +9,28 @@
 <script src="../_js/jquery-ui.min.js"></script>
 <script>
 $(document).ready(function() {
-  
+	$('#confirm').dialog({
+		modal: true,
+		autoOpen: false,
+        minWidth: 450,
+        position: {
+            my: 'left top',
+            at: 'right center',
+            of: '#robot'
+        },
+        buttons: {
+            'Подтвердить': function () {
+                $('#robot').effect('explode');
+                $(this).dialog('close');
+            },
+            'Отменить': function() {
+                $(this).dialog('close');
+            }
+        }
+	});
+	$('#robot').click(function () {
+		$('#confirm').dialog('open');
+	})
 }); // end ready
 </script>
 </head>
@@ -24,7 +45,9 @@ $(document).ready(function() {
 			<p>Робот! Щелкните по роботу, чтобы уничтожить его.</p>
       <p><img src="images/robot.jpg" id="robot"></p>
 			<!-- добавьте диалоговое окно сюда -->
-
+			<div id="confirm" title="Подтвердите уничтожение">
+				<p>Хотите?</p>
+			</div>
 		</div>
 	</div>
 	<footer>

@@ -1,39 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Авторизация</title>
-<link href="../_css/site.css" rel="stylesheet">
-<style>
-form {
-	padding: 10px 10px 10px 10px;
-}
-label {
-	display: inline-block;
-	width: 100px;
-	text-align:right;
-	margin: 0 15px 0 0;
-	color: white;
-}
-input {
-	font-size: 14px;
-}
-#button {
-	margin-left: 115px;
-}
-</style>
-<script src="../_js/jquery.min.js"></script>
-<script>
-$(document).ready(function() {
-			
-}); // end ready
-</script>
+	<meta charset="UTF-8">
+	<title>Авторизация</title>
+	<link href="../_css/site.css" rel="stylesheet">
+	<style>
+		form {
+			padding: 10px 10px 10px 10px;
+		}
+		label {
+			display: inline-block;
+			width: 100px;
+			text-align:right;
+			margin: 0 15px 0 0;
+			color: white;
+		}
+		input {
+			font-size: 14px;
+		}
+		#button {
+			margin-left: 115px;
+		}
+	</style>
+	<script src="../_js/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#login').submit(function () {
+				var formData = $(this).serialize();
+				$.get('login.php', formData, processData);
+				function processData(data) {
+					if (data==='pass') {
+						$('.main').html('<p>Вы авторизованы!</p>')
+					} else {
+						if ($('#fail').length==0) {
+							$('#formwrapper').prepend('<p id="fail">Некорректная информация</p>');
+						}
+					}
+				}
+				return false;
+			});
+		}); // end ready
+	</script>
 </head>
 <body>
 <div class="wrapper">
 	<header>
-    JAVASCRIPT <span class="amp">и</span> jQUERY: НЕДОСТАЮЩЕЕ&nbsp;РУКОВОДСТВО
-</header>
+		JAVASCRIPT <span class="amp">и</span> jQUERY: НЕДОСТАЮЩЕЕ&nbsp;РУКОВОДСТВО
+	</header>
 	<div class="content">
 		<div class="main">
 			<h1>Авторизация</h1>
@@ -55,8 +68,8 @@ $(document).ready(function() {
 		</div>
 	</div>
 	<footer>
-    <p>JavaScript и jQuery: Недостающее Руководство, Дэвид МакФарланд.</p>
-</footer>
+		<p>JavaScript и jQuery: Недостающее Руководство, Дэвид МакФарланд.</p>
+	</footer>
 </div>
 </body>
 </html>

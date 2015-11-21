@@ -9,7 +9,15 @@
 <script src="../_js/jquery-ui.min.js"></script>
 <script>
 $(document).ready(function() {
- 
+	$('#hello').dialog({
+		autoOpen: false,
+		modal: true,
+		resizable: true,
+		minWidth: 280,
+		minHeight: 141,
+		draggable: true,
+		hide: 'drop'
+	});
 }); // end ready
 </script>>
 </head>
@@ -23,7 +31,9 @@ $(document).ready(function() {
 			<h1>Привет, Мир</h1>
 			<p>Обратите внимание на то, что это диалоговое окно выглядит гораздо лучше, чем оповещение!</p>
 <!-- Добавьте тег <div> диалогового окна здесь -->
-
+			<div id="hello" title="Привет мир!">
+				<p>Диалоговое окно</p>
+			</div>
 		</div>
 	</div>
 	<footer>

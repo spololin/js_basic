@@ -9,7 +9,9 @@
 <script src="../_js/jquery-ui.min.js"></script>
 <script>
 $(document).ready(function() {
-  
+	$('#contact').tooltip({
+		content: $('#contactInfo').html()
+	})
 }); // end ready
 </script>>
 </head>
@@ -32,6 +34,9 @@ $(document).ready(function() {
 	</footer>
 </div>
 <!-- поместите шаблон здесь -->
-
+<script id="contactInfo" type="text/template">
+	<p>Наш телефон 555-55-55</p>
+	<p><img src="images/map.png" title="Я карта"></p>
+</script>
 </body>
 </html>

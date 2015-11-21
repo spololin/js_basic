@@ -28,8 +28,12 @@
 <script src="../_js/jquery.min.js"></script>
 <script>
 $(document).ready(function() {
-	
-
+	$('#newslinks a').click(function (e) {
+		e.preventDefault();
+		var url = $(this).attr('href');
+		$('#headlines').load(url+ '#newsItem');
+//		return false;
+	})
 			
 }); // end ready
 </script>

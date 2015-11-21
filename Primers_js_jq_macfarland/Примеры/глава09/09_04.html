@@ -9,7 +9,10 @@
 <script src="../_js/jquery-ui.min.js"></script>
 <script>
 $(document).ready(function() {
-
+	$('[title]').tooltip({
+		show: true,
+		track: true
+	});
 }); // end ready
 </script>>
 </head>
@@ -24,11 +27,11 @@ $(document).ready(function() {
 			<p>Вы можете добавить всплывающие подсказки к любому элементу страницы.</p>
 			<div class="row">
 
-			<p>Абзац</p>
+			<p title="Я абзац">Абзац</p>
 
-			<p>Изображение <img src="images/map.png"></p>
+			<p>Изображение <img title="Я карта" src="images/map.png"></p>
 
-			<p><button>Кнопка</button></p>
+			<p><button title="Нажми меня нежно">Кнопка</button></p>
 			
 			</div>
 		</div>
